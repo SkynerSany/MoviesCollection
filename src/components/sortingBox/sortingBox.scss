@@ -1,0 +1,67 @@
+$focusColor: #f65261;
+$bgColor: #232323;
+$textColor: #555555;
+
+.sortingBox {
+  width: 90vw;
+  margin-left: 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid #555555;
+  color: #ffffff;
+}
+
+.sortingBox__categoryes {
+  width: 50vw;
+  height: 7vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.7vw;
+  font-weight: 300;
+  letter-spacing: 0.1vw;
+  cursor: pointer;
+}
+
+.sortingBox__category {
+  list-style: none;
+  padding-bottom: 2.4vw;
+  margin-top: 2.9vw;
+  &:hover {
+    border-bottom: solid #f65261;
+  }
+  &.active {
+    border-bottom: solid #f65261;
+  }
+}
+
+.sortingBox__sort {
+  width: 25vw;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.7vw;
+  font-weight: 300;
+  letter-spacing: 0.1vw;
+}
+
+.sortingBox__sortTitle {
+  color: $textColor;
+}
+
+.sortingBox__currentSortBox {
+  width: 15vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sortingBox__currentSortType {
+
+}
+
+.sortingBox__btnArrow {
+  font-size: 1.2vw;
+  color: $focusColor;
+}

@@ -2,20 +2,12 @@ $focusColor: #f65261;
 $bgColor: #232323;
 $textColor: #555555;
 
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Rubik', sans-serif;
-}
-
 button {
   border-radius: 0.5vw;
 }
 
 .header {
-  height: 30vw;
+  height: 31vw;
   background-image: url(./images/headerBackground.png);
   background-size: cover;
   background-repeat: no-repeat;
