@@ -21,6 +21,7 @@
 
 .moviesCollection__movie {
   width: 25vw;
+  margin: 2vw 0;
   position: relative;
   &:hover {
     .moviesCollection__settings {
@@ -52,14 +53,17 @@
 }
 
 .moviesCollection__img {
-  
+  width: 25vw;
+  height: 37vw;
 }
 
 .moviesCollection__info {
+  margin-top: 1vw;
   color: #555555;
 }
 
 .moviesCollection__moviesInfo {
+  margin-bottom: 0.5vw;
   display: flex;
   justify-content: space-between;
 }
@@ -70,16 +74,17 @@
 }
 
 .moviesCollection__year {
-  height: 2.5vw;
-  width: 5vw;
+  height: 2vw;
+  width: 4vw;
   text-align: center;
-  padding-top: 0.3vw;
+  padding-top: 0.1vw;
   font-weight: 300;
   font-size: 1.4vw;
   border: 0.1vw solid #555555;
 }
 
 .moviesCollection__genre {
+  width: 20vw;
   font-weight: 300;
   font-size: 1.4vw;
 }

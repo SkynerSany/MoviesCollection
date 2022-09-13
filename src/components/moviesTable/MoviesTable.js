@@ -2,33 +2,32 @@ import React, { useEffect, useState } from 'react'
 import Movie from './Movie'
 import './moviesTable.scss'
 
-export default function MoviesTable() {
-  const [collection, setCollection] = useState({});
-  // const options = {
-  //   method: 'GET',
-  //   headers: {
-  //     'X-RapidAPI-Key': '7663806e86msh3508ab01aa95d31p19e16cjsn12d89b251ba8',
-  //     'X-RapidAPI-Host': 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com'
-  //   }
-  // };
+export default function MoviesTable({ category, searchValue }) {
+  const [collection, setCollection] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   fetch('https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=bojack&country=uk', options)
-  //     .then(response => response.json())
-  //     .then(response => console.log(response))
-  //     .catch(err => console.error(err));
-  // }, [])
+  useEffect(() => {
+    setLoading(true);
+    fetch(`http://localhost:4000/movies?search=${searchValue}&searchBy=title&filter=${category === 'ALL' ? '' : category}&limit=6`)
+      .then(response => response.json())
+      .then(response => {setCollection(response.data); console.log(response)})
+      .catch(err => console.error(err))
+      .finally(() => setLoading(false));
+  }, [category, searchValue])
 
   return (
     <section className="moviesCollection">
-      <p className="moviesCollection__found"><span>39</span> movies found</p>
+      <p className="moviesCollection__found"><span>{collection.length}</span> movies found</p>
       <div className="moviesCollection__collection">
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
+        {
+          loading || collection.map(item =>
+            <Movie 
+              poster={item.poster_path} 
+              title={item.title} 
+              genres={item.genres} 
+              releaseDate={item.release_date.slice(0,4)} 
+            />)
+        }
       </div>
     </section>
   )

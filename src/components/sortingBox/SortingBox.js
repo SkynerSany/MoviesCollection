@@ -1,15 +1,23 @@
 import React from 'react'
 import './sortingBox.scss'
 
-export default function SortingBox() {
+export default function SortingBox({ setCategory, category }) {
+  const categories = ['ALL', 'DOCUMENTARY', 'COMEDY', 'HORROR', 'CRIME']
+
+  const onClickCategory = (e) => {
+    setCategory(e.target.textContent);
+  }
+
   return (
     <section className="sortingBox">
       <ul className="sortingBox__categoryes">
-        <li className="sortingBox__category active">ALL</li>
-        <li className="sortingBox__category">DOCUMENTARY</li>
-        <li className="sortingBox__category">COMEDY</li>
-        <li className="sortingBox__category">HORROR</li>
-        <li className="sortingBox__category">CRIME</li>
+        {
+          categories.map(item => 
+            <li 
+              onClick={onClickCategory} 
+              className={`sortingBox__category ${ category === item ? 'active' : ''}`}
+            >{ item }</li>)
+        }
       </ul>
       <div className="sortingBox__sort">
         <p className="sortingBox__sortTitle">SORT BY</p>
