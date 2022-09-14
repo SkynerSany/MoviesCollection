@@ -14,6 +14,7 @@ export default function SortingBox({ setCategory, category }) {
         {
           categories.map(item => 
             <li 
+              key={item}
               onClick={onClickCategory} 
               className={`sortingBox__category ${ category === item ? 'active' : ''}`}
             >{ item }</li>)

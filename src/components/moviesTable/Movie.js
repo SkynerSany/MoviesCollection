@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 export default function Movie({ poster, title, genres, releaseDate }) {
+  const image = useRef();
+  useEffect(() => {
+    const img = new Image();
+    img.src = poster;
+    img.onload = function () { image.current = poster; }
+    img.onerror = function (e) { e.preventDefault(); console.log(e) }
+  }, [])
+
   return (
     <div className="moviesCollection__movie">
-      <img src={poster} alt="" className="moviesCollection__img" />
+      <div style={{background: `url(${image})`}} className="moviesCollection__img" />
       <div className='moviesCollection__settings'>
         <span className="moviesCollection__settingsImg">...</span>
       </div>

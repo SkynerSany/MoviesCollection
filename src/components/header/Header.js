@@ -4,9 +4,12 @@ import './header.scss'
 export default function Header({ setSearchValue }) {
   const input = useRef();
 
+  const onClickEnter = (e) => {
+    if (e.keyCode === 13) onClickSearch();
+  }
+
   const onClickSearch = () => {
     setSearchValue(input.current.value);
-    input.current.value = '';
   }
 
   return (
@@ -20,7 +23,7 @@ export default function Header({ setSearchValue }) {
       <div className="header__searchContainer">
         <h1 className="header__title">FIND YOUR MOVIE</h1>
         <div className="header__searchForm">
-          <input ref={input} className="header__input" placeholder="What do you want to watch?" type="text" name="" id="" />
+          <input ref={input} onKeyDown={onClickEnter} className="header__input" placeholder="What do you want to watch?" type="text" name="" id="" />
           <button onClick={onClickSearch} className="header__btnSearch">SEARCH</button>
         </div>
       </div>
