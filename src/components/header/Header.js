@@ -15,9 +15,7 @@ export default function Header({ setSearchValue }) {
   return (
     <header className="header">
       <div className="header__logoContainer">
-        <a href='#'>
-          <img src="./logo.svg" alt="" className="header__logo" />
-        </a>
+        <img onClick={() => window.location.reload()} src="./logo.svg" alt="" className="header__logo" />
         <button className="header__btnAddMovie">+ ADD MOVIE</button>
       </div>
       <div className="header__searchContainer">

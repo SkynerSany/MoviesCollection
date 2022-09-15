@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 
 export default function Pagination({ count, currentPage, setCurrentPage, fromPage, setFromPage, toPage, setToPage}) {
-  // const [fromPage, setFromPage] = useState(0);
-  // const [toPage, setToPage] = useState(12);
 
   const onChangePage = (from, to) => {
     setToPage(to);
