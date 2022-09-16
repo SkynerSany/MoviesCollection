@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Movie from './Movie'
 import './moviesTable.scss'
+import Movie from './movie/Movie'
 import Pagination from './Pagination';
 
-export default function MoviesTable({ category, searchValue }) {
+export default function MoviesTable({ category, searchValue, setModal }) {
   const [collection, setCollection] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -31,33 +31,44 @@ export default function MoviesTable({ category, searchValue }) {
     setCurrentPage(1);
   }, [category])
 
+  const MoviesCollection = () => {
+    return (
+      <>
+        <p className="moviesCollection__found"><span>{collectionCount}</span> movies found</p>
+        <div className="moviesCollection__collection">
+          {
+            loading || collection.map(item =>
+              <Movie key={item.title}
+                poster={item.poster_path} 
+                title={item.title} 
+                genres={item.genres} 
+                releaseDate={item.release_date.slice(0,4)}
+                setModal={setModal}
+              />)
+          }
+        </div>
+        <ul className='moviesCollection__paginationContainer'>
+          {
+            loading || <Pagination 
+              count={collectionCount} 
+              currentPage={currentPage} 
+              setCurrentPage={setCurrentPage}
+              fromPage={fromPage}
+              setFromPage={setFromPage}
+              toPage={toPage}
+              setToPage={setToPage}
+              />
+          }
+        </ul>
+      </>
+    )
+  }
+
   return (
     <section className="moviesCollection">
-      <p className="moviesCollection__found"><span>{collectionCount}</span> movies found</p>
-      <div className="moviesCollection__collection">
-        {
-          loading || collection.map(item =>
-            <Movie key={item.title}
-              poster={item.poster_path} 
-              title={item.title} 
-              genres={item.genres} 
-              releaseDate={item.release_date.slice(0,4)} 
-            />)
-        }
-      </div>
-      <ul className='moviesCollection__paginationContainer'>
-        {
-          loading || <Pagination 
-            count={collectionCount} 
-            currentPage={currentPage} 
-            setCurrentPage={setCurrentPage}
-            fromPage={fromPage}
-            setFromPage={setFromPage}
-            toPage={toPage}
-            setToPage={setToPage}
-            />
-        }
-      </ul>
+      {
+        collectionCount ? <MoviesCollection /> : <h2 className='moviesCollection__notFound'>No Movie found</h2>
+      }
     </section>
   )
 }

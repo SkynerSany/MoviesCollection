@@ -1,0 +1,36 @@
+.modal__backDrop {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+}
+
+.modal {
+  height: 30vw;
+  width: 50vw;
+  position: fixed;
+  top: 10vw;
+  left: 25vw;
+  border-radius: 1vw;
+  box-shadow: 0 0 20px 9px #232323;
+  background-color: #424242;
+}
+
+.modal__btnClose {
+  height: 3vw;
+  position: absolute;
+  top: 0.5vw;
+  right: 2vw;
+  border: none;
+  background: none;
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 4vw;
+  cursor: pointer;
+}
+
+.modal__title {
+
+}
