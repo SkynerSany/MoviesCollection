@@ -1,7 +1,8 @@
 import React, { useRef } from 'react'
+import AddMovie from './AddMovie';
 import './header.scss'
 
-export default function Header({ setSearchValue }) {
+export default function Header({ setSearchValue, setModal }) {
   const input = useRef();
 
   const onClickEnter = (e) => {
@@ -16,7 +17,7 @@ export default function Header({ setSearchValue }) {
     <header className="header">
       <div className="header__logoContainer">
         <img onClick={() => window.location.reload()} src="./logo.svg" alt="" className="header__logo" />
-        <button className="header__btnAddMovie">+ ADD MOVIE</button>
+        <button onClick={() => setModal(<AddMovie />)} className="header__btnAddMovie">+ ADD MOVIE</button>
       </div>
       <div className="header__searchContainer">
         <h1 className="header__title">FIND YOUR MOVIE</h1>

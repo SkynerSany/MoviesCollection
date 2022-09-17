@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import './movie.scss';
-import MoviEdit from './MoviEdit';
+import MovieSettings from './movieSettings/MovieSettings';
 
-export default function Movie({ poster, title, genres, releaseDate, setModal }) {
+export default function Movie({ setModal, movieData }) {
   const [image, setImage] = useState();
   const [openSettings, setOpenSettings] = useState(true);
 
   useEffect(() => {
     const img = new Image();
-    img.src = poster;
+    img.src = movieData.poster_path;
     img.onload = () => {
-      setImage(poster);
+      setImage(movieData.poster_path);
     };
     img.onerror = () => {
       setImage('./layout.png');
     };
-  }, [poster])
+  }, [movieData.poster_path])
   
   return (
     <div className="moviesCollection__movie">
@@ -24,14 +24,14 @@ export default function Movie({ poster, title, genres, releaseDate, setModal }) 
         <span className="moviesCollection__settingsImg">...</span>
       </div>
       {
-        openSettings || <MoviEdit setOpenSettings={setOpenSettings} setModal={setModal} />
+        openSettings || <MovieSettings setOpenSettings={setOpenSettings} setModal={setModal} movieData={movieData} />
       }
       <div className="moviesCollection__info">
         <div className="moviesCollection__moviesInfo">
-          <p className="moviesCollection__title">{title}</p>
-          <p className="moviesCollection__year">{releaseDate}</p>
+          <p className="moviesCollection__title">{movieData.title}</p>
+          <p className="moviesCollection__year">{movieData.release_date.slice(0,4)}</p>
         </div>
-        <p className="moviesCollection__genre">{genres.join(' & ')}</p>
+        <p className="moviesCollection__genre">{movieData.genres.join(' & ')}</p>
       </div>
     </div>
   )

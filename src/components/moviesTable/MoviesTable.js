@@ -3,7 +3,7 @@ import './moviesTable.scss'
 import Movie from './movie/Movie'
 import Pagination from './Pagination';
 
-export default function MoviesTable({ category, searchValue, setModal }) {
+export default function MoviesTable({ category, searchValue, setModal, setModalContent }) {
   const [collection, setCollection] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -39,11 +39,8 @@ export default function MoviesTable({ category, searchValue, setModal }) {
           {
             loading || collection.map(item =>
               <Movie key={item.title}
-                poster={item.poster_path} 
-                title={item.title} 
-                genres={item.genres} 
-                releaseDate={item.release_date.slice(0,4)}
                 setModal={setModal}
+                movieData={item}
               />)
           }
         </div>

@@ -1,0 +1,47 @@
+.moviesCollection__editContainer {
+  height: 10vw;
+  width: 15vw;
+  top: 2vw;
+  right: 2vw;
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #ffffff;
+  background-color: #232323;
+  border-radius: 0.5vw;
+  font-weight: 300;
+}
+
+.moviesCollection__btnClose {
+  height: 1.5vw;
+  margin-top: 0.1vw;
+  margin-right: 0.8vw;
+  border: none;
+  background: none;
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 2vw;
+  cursor: pointer;
+}
+
+.moviesCollection__listBtns {
+  height: inherit;
+  width: inherit;
+  list-style-type: none;
+  font-size: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.moviesCollection__btn {
+  height: 3vw;
+  padding-left: 1vw;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background-color: #f65261;
+  }
+}

@@ -4,18 +4,18 @@
   right: 0;
   bottom: 0;
   position: fixed;
-  background-color: rgba($color: #000000, $alpha: 0.5);
+  background-color: rgba($color: #000000, $alpha: 0.8);
 }
 
 .modal {
-  height: 30vw;
+  min-height: 28vw;
   width: 50vw;
-  position: fixed;
+  position: absolute;
   top: 10vw;
   left: 25vw;
   border-radius: 1vw;
   box-shadow: 0 0 20px 9px #232323;
-  background-color: #424242;
+  background-color: #232323;
 }
 
 .modal__btnClose {
@@ -31,6 +31,129 @@
   cursor: pointer;
 }
 
-.modal__title {
+.modal__container {
+  width: 40vw;
+  margin-top: 5vw;
+  margin-left: 5vw;
+  font-weight: 300;
+  color: #ffffff;
+}
 
+.modal__title {
+  height: 6vw;
+  font-size: 3.4vw;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.modal__description {
+  margin: 1vw 0;
+  font-size: 1.7vw;
+}
+
+.modal__inputContainer {
+  height: 7vw;
+  margin-bottom: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal__label {
+  font-size: 1.8vw;
+  color: #f65261;
+  text-transform: uppercase;
+}
+
+.modal__input {
+  height: 4vw;
+  padding-left: 1vw;
+  background-color: #424242;
+  border: none;
+  border-radius: 0.3vw;
+  outline: none;
+  font-size: 1.7vw;
+  font-weight: 300;
+  color: #ffffff;
+  ::placeholder {
+    color: #ffffff;
+  }
+  &:disabled {
+    background-color: #232323;
+  }
+}
+
+.modal__selectBox {
+  position: relative;
+  cursor: pointer;
+}
+
+.modal__selectBox select {
+  width: 40vw;
+}
+
+.modal__overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#modal__checkboxes {
+  width: 40vw;
+  position: absolute;
+  background-color: #232323;
+  border: none;
+  box-shadow: 0 0 4px 0px #000000;
+  cursor: pointer;
+}
+
+#modal__checkboxes {
+  label {
+    height: 4vw;
+    margin: 0 0 0 1.3vw;
+    display: flex;
+    align-items: center;
+    font-size: 1.7vw;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  input {
+    margin-right: 0.7vw;
+    border: none;
+    &:checked {
+      background-color: #f65256;
+    }
+  }
+}
+
+.modal__containerBtns {
+  height: 12vw;
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  button {
+    height: 4.5vw;
+    width: 13vw;
+    margin-left: 2vw;
+    font-size: 2vw;
+    letter-spacing: 0.1vw;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
+
+.modal__btnConfirm {
+  background-color: #f65261;
+  border: none;
+  color: #ffffff;
+}
+
+.modal__btnReset {
+  border: 0.2vw solid #f65261;
+  background: none;
+  color: #f65261;
 }

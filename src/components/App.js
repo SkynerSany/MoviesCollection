@@ -13,13 +13,17 @@ export default function App() {
 
   return (
     <>
-      <Header setSearchValue={setSearchValue} />
+      <Header setSearchValue={setSearchValue} setModal={setModal} />
       <main>
         <SortingBox setCategory={setCategory} category={category} />
-        <MoviesTable category={category} searchValue={searchValue} setModal={setModal} />
+        <MoviesTable 
+          category={category} 
+          searchValue={searchValue} 
+          setModal={setModal} 
+        />
       </main>
       {
-        modal && <Modal setModal={setModal} />
+        modal && <Modal setModal={setModal} > {modal} </Modal>
       }
       <Footer />
     </>
