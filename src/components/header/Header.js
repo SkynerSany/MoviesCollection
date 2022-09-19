@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
-import AddMovie from './AddMovie';
 import './header.scss'
+import AddMovie from './addMovie/AddMovie';
+import MovieInfo from './movieInfo/MovieInfo';
 
-export default function Header({ setSearchValue, setModal }) {
+export default function Header({ setSearchValue, setModal, movieInfo, setMovieInfo }) {
   const input = useRef();
 
   const onClickEnter = (e) => {
@@ -15,9 +16,12 @@ export default function Header({ setSearchValue, setModal }) {
 
   return (
     <header className="header">
+      {
+        movieInfo && <MovieInfo movieInfo={movieInfo} setMovieInfo={setMovieInfo} />
+      }
       <div className="header__logoContainer">
         <img onClick={() => window.location.reload()} src="./logo.svg" alt="" className="header__logo" />
-        <button onClick={() => setModal(<AddMovie />)} className="header__btnAddMovie">+ ADD MOVIE</button>
+        <button onClick={() => setModal(<AddMovie setModal={setModal} />)} className="header__btnAddMovie">+ ADD MOVIE</button>
       </div>
       <div className="header__searchContainer">
         <h1 className="header__title">FIND YOUR MOVIE</h1>

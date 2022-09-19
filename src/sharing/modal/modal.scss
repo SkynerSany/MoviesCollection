@@ -16,6 +16,7 @@
   border-radius: 1vw;
   box-shadow: 0 0 20px 9px #232323;
   background-color: #232323;
+  outline: none;
 }
 
 .modal__btnClose {
@@ -75,11 +76,21 @@
   font-size: 1.7vw;
   font-weight: 300;
   color: #ffffff;
-  ::placeholder {
-    color: #ffffff;
+  &::placeholder {
+    color: #8e8e8e;
   }
   &:disabled {
     background-color: #232323;
+  }
+}
+
+#releaseDate {
+  &::-webkit-calendar-picker-indicator {
+    height: 2vw;
+    width: 2vw;
+    padding-right: 1vw;
+    cursor: pointer;
+    background-image: url('./icons/calendar.svg');
   }
 }
 
@@ -90,6 +101,11 @@
 
 .modal__selectBox select {
   width: 40vw;
+  background-image: url(./icons/arrow.svg); 
+  background-repeat: no-repeat;
+  background-position: right 0vw top 0.7vw;
+  background-size: 2.7vw; 
+  appearance: none;
 }
 
 .modal__overSelect {
@@ -121,11 +137,10 @@
     }
   }
   input {
+    width: 1.5vw;
+    height: 1.5vw;
     margin-right: 0.7vw;
     border: none;
-    &:checked {
-      background-color: #f65256;
-    }
   }
 }
 

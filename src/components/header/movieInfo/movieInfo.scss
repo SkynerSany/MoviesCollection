@@ -1,0 +1,90 @@
+.movie {
+  height: 33vw;
+  width: -webkit-fill-available;
+  top: 0;
+  z-index: 1;
+  position: absolute;
+  background-color: #000000;
+  outline: none;
+}
+
+.movie__logoContainer {
+  width: 90vw;
+  height: 6vw;
+  margin-left: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.movie__btnSearch {
+  height: 4vw;
+  width: 4vw;
+  background: url(./icons/loop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.movie__logo {
+  height: 4vw;
+  cursor: pointer;
+}
+
+.movie__container {
+  margin: 1vw 5vw 3vw;
+  display: flex;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.movie__poster {
+  height: 23vw;
+  width: 17vw;
+}
+
+.movie__info {
+  margin: 1vw 3vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie__titleContainer {
+  display: flex;
+  align-items: center;
+}
+
+.movie__title {
+  font-weight: 300;
+  font-size: 4vw;
+}
+
+.movie__voteAverange {
+  height: 5vw;
+  width: 5vw;
+  margin-left: 2vw;
+  border: 0.1vw solid #ffffff;
+  border-radius: 3vw;
+  font-size: 2.2vw;
+  letter-spacing: 0.1vw;
+  color: #1c821c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie__timesData {
+  width: 17vw;
+  margin: 2vw 0;
+  display: flex;
+  justify-content: space-between;
+  color: #f65261;
+  font-size: 2.5vw;
+}
+
+.movie__description {
+  font-size: 1.5vw;
+}

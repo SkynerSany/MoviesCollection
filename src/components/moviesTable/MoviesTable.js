@@ -3,7 +3,7 @@ import './moviesTable.scss'
 import Movie from './movie/Movie'
 import Pagination from './Pagination';
 
-export default function MoviesTable({ category, searchValue, setModal, setModalContent }) {
+export default function MoviesTable({ category, searchValue, setModal, setMovieInfo, confirm, setConfirm }) {
   const [collection, setCollection] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -13,19 +13,19 @@ export default function MoviesTable({ category, searchValue, setModal, setModalC
   const [toPage, setToPage] = useState(12);
 
   useEffect(() => {
+    setConfirm(false);
     setLoading(true);
     fetch(`http://localhost:4000/movies?search=${searchValue}&searchBy=title&filter=${category === 'ALL' ? '' : category}&offset=${(currentPage - 1) * 6}&limit=6`)
       .then(response => response.json())
-      .then(response => {
-        setCollection(response.data);
-        setCollectionCount(response.totalAmount);
-        console.log(response);
+      .then(result => {
+        setCollection(result.data);
+        setCollectionCount(result.totalAmount);
       })
       .catch(err => console.error(err))
       .finally(() => {
         setLoading(false);
       });
-  }, [category, searchValue, currentPage])
+  }, [category, searchValue, currentPage, confirm])
 
   useEffect(() => {
     setCurrentPage(1);
@@ -38,9 +38,11 @@ export default function MoviesTable({ category, searchValue, setModal, setModalC
         <div className="moviesCollection__collection">
           {
             loading || collection.map(item =>
-              <Movie key={item.title}
+              <Movie key={item.id}
                 setModal={setModal}
                 movieData={item}
+                setMovieInfo={setMovieInfo}
+                setConfirm={setConfirm}
               />)
           }
         </div>
