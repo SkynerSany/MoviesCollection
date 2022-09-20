@@ -37,7 +37,7 @@ $textColor: #555555;
 }
 
 .sortingBox__sort {
-  width: 25vw;
+  width: 27vw;
   display: flex;
   justify-content: space-between;
   font-size: 1.7vw;
@@ -50,7 +50,8 @@ $textColor: #555555;
 }
 
 .sortingBox__currentSortBox {
-  width: 15vw;
+  width: 17vw;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,10 +59,34 @@ $textColor: #555555;
 }
 
 .sortingBox__currentSortType {
-
+  font-size: 1.7vw;
+  text-transform: uppercase;
 }
 
-.sortingBox__btnArrow {
-  font-size: 1.2vw;
-  color: $focusColor;
+.sortingBox__sortTypes {
+  height: 18vw;
+  width: 17vw;
+  top: 0;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #232323;
+  border: 0.2vw solid #555555;
+  border-radius: 0.3vw;
+  box-shadow: 0 0 20px 0px #000000;
+  list-style-type: none;
 }
+
+.sortingBox__sortType {
+  height: 3vw;
+  text-transform: uppercase;
+  font-size: 1.7vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: #f65261;
+  }
+}
+

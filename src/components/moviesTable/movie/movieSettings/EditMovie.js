@@ -31,7 +31,6 @@ export default function EditMovie({ movieData, setModal, setConfirm }) {
 
   const onClickSave = (e) => {
     const formData = Array.from(form.current.elements);
-
     const movie = {
       "title": formData[1].value,
       "tagline": "Here's to the fools who dream.",
@@ -50,8 +49,17 @@ export default function EditMovie({ movieData, setModal, setConfirm }) {
     if (Object.values(movie).includes('')) return;
   
     e.preventDefault();
-
     addFilmToDB(movie);
+  }
+
+  const onClickReset = () => {
+    const formInputs = form.current.elements;
+    formInputs[0].value = movieData.id;
+    formInputs[1].value = movieData.title;
+    formInputs[2].value = movieData.release_date;
+    formInputs[3].value = movieData.poster_path;
+    formInputs[5].value = movieData.overview;
+    formInputs[6].value = movieData.runtime;
   }
 
   return (
@@ -88,7 +96,7 @@ export default function EditMovie({ movieData, setModal, setConfirm }) {
         </div>
       </form>
       <div className='modal__containerBtns'>
-        <button className='modal__btnReset'>RESET</button>
+        <button onClick={onClickReset} className='modal__btnReset'>RESET</button>
         <button onClick={onClickSave} className='modal__btnConfirm' form='modal__form'>SAVE</button>
       </div>
     </>

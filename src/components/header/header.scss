@@ -11,6 +11,7 @@ button {
   background-image: url(./images/headerBackground.png);
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: inset 0px -9px 20px #000000;
 }
 
 .header__logoContainer {
@@ -55,6 +56,7 @@ button {
   letter-spacing: 0.1vw;
   font-weight: 300;
   color: #ffffff;
+  text-shadow: -6px -4px 3px #000000;
 }
 
 .header__searchForm {

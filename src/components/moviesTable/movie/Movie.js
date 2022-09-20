@@ -3,7 +3,7 @@ import './movie.scss';
 import MovieSettings from './movieSettings/MovieSettings';
 
 export default function Movie({ setModal, movieData, setMovieInfo, setConfirm }) {
-  const [image, setImage] = useState();
+  const [image, setImage] = useState('./layout.png');
   const [openSettings, setOpenSettings] = useState(true);
 
   useEffect(() => {

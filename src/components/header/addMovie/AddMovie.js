@@ -21,7 +21,6 @@ export default function AddMovie({ setModal }) {
 
   const onClickSubmit = (e) => {
     const formData = Array.from(form.current.elements);
-
     const movie = {
       "title": formData[0].value,
       "tagline": "Here's to the fools who dream.",
@@ -39,8 +38,13 @@ export default function AddMovie({ setModal }) {
     if (Object.values(movie).includes('')) return;
   
     e.preventDefault();
-
     addFilmToDB(movie);
+  }
+
+  const onClickReset = () => {
+    Array.from(form.current.elements).forEach(item => {
+      if (item.tagName !== 'SELECT') item.value = '';
+    });
   }
 
   return (
@@ -73,7 +77,7 @@ export default function AddMovie({ setModal }) {
         </div>
       </form>
       <div className='modal__containerBtns'>
-        <button className='modal__btnReset'>RESET</button>
+        <button onClick={onClickReset} className='modal__btnReset'>RESET</button>
         <button onClick={onClickSubmit} className='modal__btnConfirm' form='modal__form'>submit</button>
       </div>
     </>

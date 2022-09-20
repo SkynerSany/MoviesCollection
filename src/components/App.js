@@ -12,6 +12,7 @@ export default function App() {
   const [modal, setModal] = useState(false);
   const [movieInfo, setMovieInfo] = useState(false);
   const [confirm, setConfirm] = useState(false);
+  const [sortType, setSortType] = useState('release_date asc')
 
   return (
     <>
@@ -23,7 +24,12 @@ export default function App() {
        setConfirm={setConfirm}
       />
       <main>
-        <SortingBox setCategory={setCategory} category={category} />
+        <SortingBox 
+          setCategory={setCategory} 
+          category={category}
+          sortType={sortType}
+          setSortType={setSortType}
+        />
         <MoviesTable 
           category={category} 
           searchValue={searchValue} 
@@ -31,6 +37,7 @@ export default function App() {
           setMovieInfo={setMovieInfo}
           confirm={confirm}
           setConfirm={setConfirm}
+          sortType={sortType}
         />
       </main>
       {

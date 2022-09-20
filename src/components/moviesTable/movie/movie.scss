@@ -1,8 +1,9 @@
 .moviesCollection__movie {
-  height: 46vw;
+  height: 47vw;
   width: 25vw;
   margin: 2vw 0;
   position: relative;
+  box-shadow: 0 0 20px 0px #000000;
   &:hover {
     .moviesCollection__settings {
       display: flex;
@@ -43,17 +44,20 @@
 }
 
 .moviesCollection__info {
-  margin-top: 1vw;
+  margin: 1vw;
+  width: 23vw;
   color: #555555;
 }
 
 .moviesCollection__moviesInfo {
+  width: 23vw;
   margin-bottom: 0.5vw;
   display: flex;
   justify-content: space-between;
 }
 
 .moviesCollection__title {
+  width: 19vw;
   font-weight: 500;
   font-size: 1.6vw;
 }

@@ -1,7 +1,8 @@
 import React from 'react'
+import SortBy from './SortBy';
 import './sortingBox.scss'
 
-export default function SortingBox({ setCategory, category }) {
+export default function SortingBox({ setCategory, category, sortType, setSortType }) {
   const categories = ['ALL', 'DOCUMENTARY', 'COMEDY', 'HORROR', 'CRIME']
 
   const onClickCategory = (e) => {
@@ -23,8 +24,7 @@ export default function SortingBox({ setCategory, category }) {
       <div className="sortingBox__sort">
         <p className="sortingBox__sortTitle">SORT BY</p>
         <div className="sortingBox__currentSortBox">
-          <span className="sortingBox__currentSortType">RELEASE DATE</span>
-          <div className='sortingBox__btnArrow'>&#9660;</div>
+          <SortBy sortType={sortType} setSortType={setSortType} />
         </div>
       </div>
     </section>
