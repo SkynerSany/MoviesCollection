@@ -1,0 +1,32 @@
+.modal__confirmContainer {
+  height: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal__confirmImage {
+  height: 6vw;
+  width: 6vw;
+  background-color: #f65261;
+  background-image: url(./icons/accept.svg);
+  background-size: 4vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 3vw;
+}
+
+.modal__confirmTitle {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 3.5vw;
+  letter-spacing: 0.2vw;
+}
+
+.modal__confirmDescription {
+  width: 30vw;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.8vw;
+}
