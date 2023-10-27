@@ -1,0 +1,79 @@
+.moviesCollection__movie {
+  height: 47vw;
+  width: 25vw;
+  margin: 2vw 0;
+  position: relative;
+  box-shadow: 0 0 20px 0px #000000;
+  &:hover {
+    .moviesCollection__settings {
+      display: flex;
+    }
+    .moviesCollection__editContainer {
+      display: flex;
+    }
+  }
+}
+
+.moviesCollection__settings {
+  height: 3vw;
+  width: 3vw;
+  top: 2vw;
+  right: 2vw;
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #232323;
+  border-radius: 3vw;
+  cursor: pointer;
+}
+
+.moviesCollection__settingsImg {
+  padding-left: 1.2vw;
+  text-align: center;
+  font-size: 2.3vw;
+  color: #ffffff;
+  writing-mode: vertical-rl;
+}
+
+.moviesCollection__img {
+  width: 25vw;
+  height: 37vw;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.moviesCollection__info {
+  margin: 1vw;
+  width: 23vw;
+  color: #555555;
+}
+
+.moviesCollection__moviesInfo {
+  width: 23vw;
+  margin-bottom: 0.5vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.moviesCollection__title {
+  width: 19vw;
+  font-weight: 500;
+  font-size: 1.6vw;
+}
+
+.moviesCollection__year {
+  height: 2vw;
+  width: 4vw;
+  text-align: center;
+  padding-top: 0.1vw;
+  font-weight: 300;
+  font-size: 1.4vw;
+  border: 0.1vw solid #555555;
+}
+
+.moviesCollection__genre {
+  width: 20vw;
+  font-weight: 300;
+  font-size: 1.4vw;
+}
